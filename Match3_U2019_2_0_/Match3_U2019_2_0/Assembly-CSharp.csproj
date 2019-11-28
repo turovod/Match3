@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Figure.cs" />
+    <Compile Include="Assets\Scripts\MoveFigure.cs" />
     <Compile Include="Assets\Scripts\SM_Play.cs" />
     <Compile Include="Assets\Scripts\SM_PlayCopy.cs" />
     <Compile Include="Assets\Scripts\UpTrigger.cs" />
