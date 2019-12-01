@@ -11,30 +11,30 @@ public class MoveFigure : MonoBehaviour
 
     private void Awake()
     {
-        singleton = this;
+        singleton = this; // Почему так а не через GetComponent
     }
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    public void ClickDown(Figure figure_)
+    public void ClickEnter(Figure figure_)
     {
         state = 1;
-        figureDown = figure_;
+        figureUp = figure_;
     }
     public void ClickUp(Figure figure_)
     {
 
-        figureUp = figure_;
-         Debug.Log("m1 "+ figureDown.x+" "+ figureDown.y+"   "+ figureUp.x+ " "+figureUp.y);
-       if (figureDown.x == figureUp.x)
+        figureDown = figure_;
+        Debug.Log("m1 " + figureDown.x + " " + figureDown.y + "   " + figureUp.x + " " + figureUp.y);
+        if (figureDown.x == figureUp.x)
         {
             Debug.Log("m2");
 
@@ -58,19 +58,9 @@ public class MoveFigure : MonoBehaviour
     public void Move()
     {
         Debug.Log("move");
-
-        int _xd = figureDown.x;
-        int _yd = figureDown.y;
-        int _xu = figureUp.x;
-        int _yu = figureUp.y;
-
-        figureDown.transform.localPosition = new Vector3(_xu, _yu, 0);
-        figureUp.transform.localPosition = new Vector3(_xd, _yd, 0);
-
-        figureDown.SetCoord(_xu, _yu);
-        figureUp.SetCoord(_xd, _yd);
+        int _index = figureDown.index;
+        figureDown.SetIndex(figureUp.index);
+        figureUp.SetIndex(_index);
 
     }
-
-
 }
